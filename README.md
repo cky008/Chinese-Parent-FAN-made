@@ -1,2 +1,3 @@
 # Chinese-Parent-FAN-made
- a project
+ a project by NUIST students
+ FAN made edition of Chinese Parent.
