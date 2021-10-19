@@ -5,7 +5,7 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.util.Vector;
 
-public class mainDialogue {
+public class mainDialogueBOX {
     public static void main(String[] ars)
     {
         //invisible glue
