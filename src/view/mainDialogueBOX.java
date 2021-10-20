@@ -49,6 +49,8 @@ public class mainDialogueBOX {
         //console
         JPanel consolePanel = new JPanel();
         consolePanel.setLayout(null);
+        consolePanel.setBackground(null);
+        consolePanel.setOpaque(false);
         consolePanel.setBorder(new EmptyBorder(0, 0, 50, 50));
 //        Vector<String> v = new Vector<String>();
         Vector<String> v = new Vector<>();
@@ -111,11 +113,12 @@ public class mainDialogueBOX {
         down.add(hGlue);
         down.add(consolePanel);
 
-        ImageIcon background = new ImageIcon("./src/resources/img/home_bg7.png");
+        JLabel bg = new aLabel(new ImageIcon("./src/resources/img/home_bg7.png").getImage());
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setBounds(100,100,1080,720);
         frame.setVisible(true);
+        frame.add(bg);
     }
 
     public static Box newEFBox(String s1, int EFdata, int EFturn) {
@@ -135,5 +138,18 @@ public class mainDialogueBOX {
         returnBox.add(hGlue);
         returnBox.add(new JLabel(String.valueOf(EFdata)));
         return returnBox;
+    }
+
+    private static class aLabel extends JLabel
+    {
+        private Image image;
+        public aLabel(Image image){ this.image = image; }
+        @Override
+        public void paintComponent(Graphics g){
+            super.paintComponent(g);
+            int x = this.getWidth();
+            int y = this.getHeight();
+            g.drawImage(image, 0, 0, x, y - 28, null);
+        }
     }
 }
