@@ -3,11 +3,16 @@ package view;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 public class mainDialogueBOX {
     public static void main(String[] ars)
     {
+        new mainDialogueBOX();
+    }
+    public mainDialogueBOX(){
         //invisible glue
         Component vGlue = Box.createVerticalGlue();
         Component hGlue = Box.createHorizontalGlue();
@@ -119,6 +124,14 @@ public class mainDialogueBOX {
         frame.setBounds(100,100,1080,720);
         frame.setVisible(true);
         frame.add(bg);
+
+        request.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                Request req = new Request();
+
+            }
+        });
     }
 
     public static Box newEFBox(String s1, int EFdata, int EFturn) {
