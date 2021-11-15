@@ -125,6 +125,14 @@ public class mainDialogueBOX {
         frame.setVisible(true);
         frame.add(bg);
 
+        study.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                Study stu = new Study();
+            }
+        });
+
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
