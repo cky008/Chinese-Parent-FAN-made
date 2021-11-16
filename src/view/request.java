@@ -365,6 +365,13 @@ public class request extends JFrame{
             }
         });
 
+        goals.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                goals goa = new goals();
+            }
+        });
+
         //frame布局
         frame.add(panel1,BorderLayout.NORTH);
         frame.add(panel2,BorderLayout.CENTER);

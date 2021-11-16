@@ -146,6 +146,13 @@ public class mainDialogueBOX {
                 view.absorbFragments abF = new absorbFragments();
             }
         });
+
+        goals.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                goals goa = new goals();
+            }
+        });
     }
 
     public static Box newEFBox(String s1, int EFdata, int EFturn) {

@@ -382,6 +382,13 @@ public class study extends JFrame {
             }
         });
 
+        goals.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                goals goa = new goals();
+            }
+        });
+
         frame.add(panel);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
