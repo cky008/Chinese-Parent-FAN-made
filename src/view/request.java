@@ -4,15 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
-public class Request extends JFrame{
+public class request extends JFrame{
     public static void main(String[] args)
     {
-       new Request();
+       new request();
     }
-    public Request(){
+    public request(){
         JFrame frame = new JFrame("request");    //创建Frame窗口
         frame.setBounds(450,130,700,600);
         frame.setLayout(new BorderLayout());
@@ -363,7 +361,7 @@ public class Request extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Study stu = new Study();
+                view.study stu = new study();
             }
         });
 

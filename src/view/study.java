@@ -5,9 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Study extends JFrame {
-    public static void main(String[] args) {new Study();}
-    public Study(){
+public class study extends JFrame {
+    public static void main(String[] args) {new study();}
+    public study(){
         JFrame frame = new JFrame("study");    //创建Frame窗口
         frame.setBounds(600,130,350,550);
         frame.setBackground(new Color(209,172,143));
@@ -377,7 +377,7 @@ public class Study extends JFrame {
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Request req = new Request();
+                view.request req = new request();
 
             }
         });

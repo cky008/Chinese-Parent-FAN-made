@@ -129,15 +129,21 @@ public class mainDialogueBOX {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Study stu = new Study();
+                view.study stu = new study();
             }
         });
 
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                Request req = new Request();
+                view.request req = new request();
+            }
+        });
 
+        absorbFragments.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                view.absorbFragments abF = new absorbFragments();
             }
         });
     }
