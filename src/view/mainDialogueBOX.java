@@ -153,6 +153,13 @@ public class mainDialogueBOX {
                 goals goa = new goals();
             }
         });
+
+        schedule.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                schedule sch = new schedule();
+            }
+        });
     }
 
     public static Box newEFBox(String s1, int EFdata, int EFturn) {
