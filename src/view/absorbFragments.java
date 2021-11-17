@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class absorbFragments{
     static Panel panel1,panel2,panel3;
-    static JFrame frame = new JFrame("挖脑洞");
+    static JFrame frame = new JFrame("Absorb Fragments");
     public static void main(String[] args) {
 
         new absorbFragments();

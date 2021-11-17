@@ -10,7 +10,7 @@ public class schedule {
         new schedule();
     }
     static Panel panel1,panel2,panel3;
-    static JFrame frame = new JFrame("挖脑洞");
+    static JFrame frame = new JFrame("schedule");
     schedule() {
         frame.setBounds(600,130,350,550);
         frame.setLayout(new BorderLayout());
