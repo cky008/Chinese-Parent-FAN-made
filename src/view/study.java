@@ -1,19 +1,21 @@
 package view;
 
+import model.essentialFactor;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class study extends JFrame {
-    public static void main(String[] args) {new study();}
-    public study(){
+    public study(essentialFactor ef){
         JFrame frame = new JFrame("study");    //创建Frame窗口
-        frame.setBounds(600,130,350,550);
+        frame.setBounds(600,130,380,550);
         frame.setBackground(new Color(209,172,143));
         frame.setLayout(new BorderLayout());
         Font f = new Font("宋体",Font.BOLD,30);//根据指定字体名称、样式和磅值大小，创建一个新 Font。
-        final int[] wuxing = {300};
+        final int[] wuxing = {ef.getKnowledge()};
+
         String[][] stuActs = {{"英语","数学","语文","历史","物理","化学"},
                 {"100","200","50","40","150","180"}};
         String[][] stuShuXing = {{"记忆力","智商","情商","记忆力","智商","想象力"},
@@ -196,11 +198,11 @@ public class study extends JFrame {
 
         //其他界面按钮
         Panel p2 = new Panel();
-        JButton study = new JButton("Study");
+        JButton schedule = new JButton("Schedule");
         JButton goals = new JButton("Goals");
         JButton request = new JButton("Request");
         JButton mainPage = new JButton("MainPage");
-        p2.add(study);
+        p2.add(schedule);
         p2.add(goals);
         p2.add(request);
         p2.add(mainPage);
@@ -225,12 +227,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText1.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][0]+" +"+stuShuXing[1][0]);
+                    ef.addMemory(Integer.valueOf(stuShuXing[1][0]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi1.setText("已学习");
                     xuexi1.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][0]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][0]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][0]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -250,12 +254,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText2.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][1]+" +"+stuShuXing[1][1]);
+                    ef.addIQ(Integer.valueOf(stuShuXing[1][1]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi2.setText("已学习");
                     xuexi2.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][1]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][1]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][1]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -275,12 +281,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText3.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][2]+" +"+stuShuXing[1][2]);
+                    ef.addEQ(Integer.valueOf(stuShuXing[1][2]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi3.setText("已学习");
                     xuexi3.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][2]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][2]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][2]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -300,12 +308,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText4.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][3]+" +"+stuShuXing[1][3]);
+                    ef.addMemory(Integer.valueOf(stuShuXing[1][3]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi4.setText("已学习");
                     xuexi4.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][3]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][3]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][3]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -325,12 +335,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText5.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][4]+" +"+stuShuXing[1][4]);
+                    ef.addIQ(Integer.valueOf(stuShuXing[1][4]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi5.setText("已学习");
                     xuexi5.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][4]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][4]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][4]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -350,12 +362,14 @@ public class study extends JFrame {
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText6.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][5]+" +"+stuShuXing[1][5]);
+                    ef.addImagination(Integer.valueOf(stuShuXing[1][5]));
                     panel.add(stuAct);
                     panel.add(shuxing);
                     j1.add(panel);
                     xuexi6.setText("已学习");
                     xuexi6.setEnabled(false);
-                    wuxing[0] = wuxing[0]- Integer.valueOf(stuActs[1][5]);
+                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][5]);
+                    ef.minusKnowledge(Integer.valueOf(stuActs[1][5]));
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -369,7 +383,7 @@ public class study extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX();
+                mainDialogueBOX m = new mainDialogueBOX(ef);
 
             }
         });
@@ -377,7 +391,7 @@ public class study extends JFrame {
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.request req = new request();
+                view.request req = new request(ef);
 
             }
         });
@@ -385,7 +399,14 @@ public class study extends JFrame {
         goals.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                goals goa = new goals();
+                goals goa = new goals(ef);
+            }
+        });
+
+        schedule.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                schedule sch = new schedule(ef);
             }
         });
 

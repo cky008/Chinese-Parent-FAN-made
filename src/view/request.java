@@ -4,20 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+import model.essentialFactor;
 public class request extends JFrame{
-    public static void main(String[] args)
-    {
-       new request();
-    }
-    public request(){
+
+    public request(essentialFactor ef){
         JFrame frame = new JFrame("request");    //创建Frame窗口
         frame.setBounds(450,130,700,600);
         frame.setLayout(new BorderLayout());
         Font f = new Font("宋体",Font.BOLD,30);//根据指定字体名称、样式和磅值大小，创建一个新 Font。
 
         //索取次数
-        final int[] times = {3};
+        final int[] times = {ef.getTimes()};
         Panel panel1 = new Panel();
         JLabel text1 = new JLabel("可向父母索取");
         JLabel text2 = new JLabel(String.valueOf(times[0]));
@@ -31,7 +28,7 @@ public class request extends JFrame{
         panel2.setLayout(new GridLayout(5,1));
         String[][] reqActs = {{"小区滑梯","沙发蹦床","平板游戏","电子琴","橡皮泥","游乐园"},
                 {"26","27","28","38","30","40"}};
-        int face = 50;
+        int face = ef.getFace();
 
         //事件一
         Panel panel2_1 = new Panel();
@@ -53,6 +50,7 @@ public class request extends JFrame{
         clickReq.setFont(f);
         if(((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))>=0.75){
             clickReq.setBackground(new Color(255,125,0));
+
         }
         else{
             clickReq.setBackground(new Color(130,130,130));
@@ -188,11 +186,11 @@ public class request extends JFrame{
         Panel panel3 = new Panel();
         JButton study = new JButton("Study");
         JButton goals = new JButton("Goals");
-        JButton request = new JButton("Request");
+        JButton schedule = new JButton("Schedule");
         JButton mainPage = new JButton("MainPage");
         panel3.add(study);
         panel3.add(goals);
-        panel3.add(request);
+        panel3.add(schedule);
         panel3.add(mainPage);
 
         //按钮事件
@@ -206,9 +204,11 @@ public class request extends JFrame{
                     j1.add(reqSuc);
                     j1.setVisible(true);
                     times[0]--;
+                    ef.minusTimes(1);
                     text2.setText(String.valueOf(times[0]));
                     clickReq.setText("已索取");
                     clickReq.setEnabled(false);
+                    ef.setIQ(1000);
                 }
                 if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -236,6 +236,7 @@ public class request extends JFrame{
                     j1.add(reqSuc);
                     j1.setVisible(true);
                     times[0]--;
+                    ef.minusTimes(1);
                     text2.setText(String.valueOf(times[0]));
                     clickReq2.setText("已索取");
                     clickReq2.setEnabled(false);
@@ -266,6 +267,7 @@ public class request extends JFrame{
                     j1.add(reqSuc);
                     j1.setVisible(true);
                     times[0]--;
+                    ef.minusTimes(1);
                     text2.setText(String.valueOf(times[0]));
                     clickReq3.setText("已索取");
                     clickReq3.setEnabled(false);
@@ -296,6 +298,7 @@ public class request extends JFrame{
                     j1.add(reqSuc);
                     j1.setVisible(true);
                     times[0]--;
+                    ef.minusTimes(1);
                     text2.setText(String.valueOf(times[0]));
                     clickReq4.setText("已索取");
                     clickReq4.setEnabled(false);
@@ -326,6 +329,7 @@ public class request extends JFrame{
                     j1.add(reqSuc);
                     j1.setVisible(true);
                     times[0]--;
+                    ef.minusTimes(1);
                     text2.setText(String.valueOf(times[0]));
                     clickReq5.setText("已索取");
                     clickReq5.setEnabled(false);
@@ -351,8 +355,9 @@ public class request extends JFrame{
         mainPage.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX();
+                mainDialogueBOX m = new mainDialogueBOX(ef);
 
             }
         });
@@ -361,14 +366,21 @@ public class request extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.study stu = new study();
+                view.study stu = new study(ef);
             }
         });
 
         goals.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                goals goa = new goals();
+                goals goa = new goals(ef);
+            }
+        });
+
+        schedule.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e) {
+                frame.setVisible(false);
+                schedule sch = new schedule(ef);
             }
         });
 

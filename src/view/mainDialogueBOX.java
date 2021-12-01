@@ -6,13 +6,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
-
+import  model.essentialFactor;
 public class mainDialogueBOX {
-    public static void main(String[] ars)
-    {
-        new mainDialogueBOX();
+    public static void main(String[] ars) {
+        essentialFactor ef = new essentialFactor(100,300,64,100,100,67,300,45,50,78,89,78,34,78,23,56,23,78,4);
+        new mainDialogueBOX(ef);
     }
-    public mainDialogueBOX(){
+    public mainDialogueBOX(essentialFactor ef){
         //invisible glue
         Component vGlue = Box.createVerticalGlue();
         Component hGlue = Box.createHorizontalGlue();
@@ -32,8 +32,8 @@ public class mainDialogueBOX {
 
         //data
         Box dataBox = Box.createHorizontalBox();
-        JLabel dataKnowledge = new JLabel("389");
-        JLabel dataAction = new JLabel("0/100");
+        JLabel dataKnowledge = new JLabel(String.valueOf(ef.getKnowledge()));
+        JLabel dataAction = new JLabel(String.valueOf(ef.getAction()));
         JButton knowledgeButton = new JButton("悟性");
         JButton actionButton = new JButton("行动力");
         dataBox.add(knowledgeButton);
@@ -43,13 +43,13 @@ public class mainDialogueBOX {
 
         //Essential Factor
         Box essentialFactor = Box.createVerticalBox();
-        essentialFactor.add(newEFBox("智商",232,3));
-        essentialFactor.add(newEFBox("情商",112,5));
-        essentialFactor.add(newEFBox("体魄",411,6));
-        essentialFactor.add(newEFBox("记忆力",212,4));
-        essentialFactor.add(newEFBox("想象力",231,7));
-        essentialFactor.add(newEFBox("魅力",23));
-        essentialFactor.add(newEFBox("面子",22));
+        essentialFactor.add(newEFBox("智商",ef.getIQ(),ef.getIQRate()));
+        essentialFactor.add(newEFBox("情商",ef.getEQ(),ef.getEQRate()));
+        essentialFactor.add(newEFBox("体魄",ef.getConstitution(),ef.getConstitutionRate()));
+        essentialFactor.add(newEFBox("记忆力",ef.getMemory(),ef.getMemoryRate()));
+        essentialFactor.add(newEFBox("想象力",ef.getImagination(),ef.getImaginationRate()));
+        essentialFactor.add(newEFBox("魅力",ef.getCharm(),ef.getCharmRate()));
+        essentialFactor.add(newEFBox("面子",ef.getFace()));
 
         //console
         JPanel consolePanel = new JPanel();
@@ -129,35 +129,35 @@ public class mainDialogueBOX {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.study stu = new study();
+                view.study stu = new study(ef);
             }
         });
 
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.request req = new request();
+                view.request req = new request(ef);
             }
         });
 
         absorbFragments.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.absorbFragments abF = new absorbFragments();
+                view.absorbFragments abF = new absorbFragments(ef);
             }
         });
 
         goals.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                goals goa = new goals();
+                goals goa = new goals(ef);
             }
         });
 
         schedule.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                schedule sch = new schedule();
+                schedule sch = new schedule(ef);
             }
         });
     }

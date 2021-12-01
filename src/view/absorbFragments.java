@@ -1,5 +1,6 @@
 package view;
 
+import model.essentialFactor;
 import model.fragments;
 
 import javax.swing.*;
@@ -11,11 +12,7 @@ import java.util.Arrays;
 public class absorbFragments{
     static Panel panel1,panel2,panel3;
     static JFrame frame = new JFrame("Absorb Fragments");
-    public static void main(String[] args) {
-
-        new absorbFragments();
-    }
-    public absorbFragments() {
+    public absorbFragments(essentialFactor ef) {
             //创建Frame窗口
         frame.setBounds(450,130,750,900);
         frame.setLayout(new BorderLayout());
@@ -46,7 +43,7 @@ public class absorbFragments{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX();
+                mainDialogueBOX m = new mainDialogueBOX(ef);
             }
         });
 
