@@ -183,5 +183,14 @@ public class essentialFactor {
     public void addIQ(int addIQ){this.IQ = IQ + addIQ;}
     public void addEQ(int addEQ){this.EQ = EQ + addEQ;}
     public void addImagination(int addImagination){this.imagination = imagination + addImagination;}
+    public void addConstitution(int addConstitution){this.constitution = constitution + addConstitution;}
+    public void addMemoryE(int addMemoryE){this.memoryRate = memoryRate + addMemoryE;}
+    public void addIQE(int addIQE){this.IQRate = IQRate + addIQE;}
+    public void addEQE(int addEQE){this.EQRate = EQRate + addEQE;}
+    public void addImaginationE(int addImaginationE){this.imaginationRate = imaginationRate + addImaginationE;}
+    public void addConstitutionE(int addConstitutionE){this.constitutionRate = constitutionRate + addConstitutionE;}
+    public void addKnowledge(int addKnowledge){this.knowledge=knowledge + addKnowledge;}
+    public void addAction(int addAction){this.action = action + addAction;}
+    public void minusAction(int minusAction){this.action=action - minusAction;}
 
 }

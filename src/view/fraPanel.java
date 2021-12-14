@@ -1,5 +1,6 @@
 package view;
 
+import model.essentialFactor;
 import model.fragments;
 
 import javax.swing.*;
@@ -7,10 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class fraPanel implements ActionListener{
 
-    public static Panel genFraPanel() {
+    public static Panel genFraPanel(essentialFactor ef) {
         Panel panel = new Panel();
         panel.setLayout(new GridLayout(10,10,5,5));
 
@@ -58,7 +58,7 @@ public class fraPanel implements ActionListener{
                     }
                     case 5 -> {
                         tempJButton.setIcon(ConstitutionIcon);
-                        tempJButton.setToolTipText("add 5 Constitution immediately");
+                        tempJButton.setToolTipText("add 10 Constitution immediately");
                     }
                     case 6 -> {
                         tempJButton.setIcon(IQEIcon);
@@ -103,24 +103,113 @@ public class fraPanel implements ActionListener{
                         tempJButton.setEnabled(false);
                         switch (tempJButton.getText()) {
                             case "1" -> {
-                                tempJButton.setIcon(IQIcon);
-                                System.out.println("IQ++");
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addIQ(10);
+                                }
                             }
-                            case "2" -> tempJButton.setIcon(EQIcon);
-                            case "3" -> tempJButton.setIcon(ImaginationIcon);
-                            case "4 "-> tempJButton.setIcon(MemoryIcon);
-                            case "5" -> tempJButton.setIcon(ConstitutionIcon);
-                            case "6" -> tempJButton.setIcon(IQEIcon);
-                            case "7" -> tempJButton.setIcon(EQEIcon);
-                            case "8" -> tempJButton.setIcon(ImaginationEIcon);
-                            case "9" -> tempJButton.setIcon(MemoryEIcon);
-                            case "10" -> tempJButton.setIcon(ConstitutionEIcon);
-                            case "11" -> tempJButton.setIcon(KnowledgeIcon);
-                            case "12" -> tempJButton.setIcon(RandomIcon);
-                            case "13" -> tempJButton.setIcon(ActionIcon);
+                            case "2" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addEQ(10);
+                                }
+                            }
+                            case "3" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addImagination(10);
+                                }
+                            }
+                            case "4 "-> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addMemory(10);
+                                }
+                            }
+                            case "5" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addConstitution(10);
+                                }
+                            }
+                            case "6" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addIQE(5);
+                                }
+                            }
+                            case "7" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addEQE(5);
+                                }
+                            }
+                            case "8" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addImaginationE(5);
+                                }
+                            }
+                            case "9" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addMemoryE(5);
+                                }
+                            }
+                            case "10" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addConstitutionE(5);
+                                }
+                            }
+                            case "11" -> {
+                                if (ef.getAction()<10){
+                                    JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
+                                }
+                                else {
+                                    ef.minusAction(10);
+                                    ef.addKnowledge(20);
+                                }
+                            }
+                            case "12" -> {
+                                ef.addAction(15);
+                            }
+                            case "13" -> {
+                                ef.addAction(20);
+                            }
                             case "14" -> {
-                                System.out.println("Action++");
-                                absorbFragments.renewNextLevel();
+                                ef.addAction(50);
+                                absorbFragments.renewNextLevel(ef);
                             }
                         }
                     }
@@ -135,4 +224,5 @@ public class fraPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
 
     }
+
 }
