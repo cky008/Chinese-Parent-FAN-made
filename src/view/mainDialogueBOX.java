@@ -22,7 +22,9 @@ public class mainDialogueBOX {
         Box infoBox = Box.createHorizontalBox();
         Box infoDetail = Box.createVerticalBox();
         JLabel infoName = new JLabel("毛毛");
+        infoName.setForeground(Color.WHITE);
         JLabel infoAge = new JLabel("3岁");
+        infoAge.setForeground(Color.WHITE);
         JButton infoButton = new JButton("Me");
 
         infoDetail.add(infoName);
@@ -35,6 +37,8 @@ public class mainDialogueBOX {
         JLabel dataKnowledge = new JLabel(String.valueOf(ef.getKnowledge()));
         JLabel dataAction = new JLabel(String.valueOf(ef.getAction()));
         JButton knowledgeButton = new JButton("悟性");
+        dataAction.setForeground(Color.WHITE);
+        dataKnowledge.setForeground(Color.WHITE);
         JButton actionButton = new JButton("行动力");
         dataBox.add(knowledgeButton);
         dataBox.add(dataKnowledge);
