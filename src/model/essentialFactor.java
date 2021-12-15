@@ -5,9 +5,9 @@ import view.absorbFragments;
 import javax.swing.*;
 
 public class essentialFactor {
-    int IQ,EQ,constitution,memory,imagination,charm,knowledge,action,face,stress, satisfaction,potential,IQRate,EQRate,constitutionRate,memoryRate,imaginationRate,charmRate,times;
+    int IQ,EQ,constitution,memory,imagination,charm,knowledge,action,face,stress, satisfaction,potential,IQRate,EQRate,constitutionRate,memoryRate,imaginationRate,charmRate,times,turn;
 
-    public essentialFactor(int IQ, int EQ, int constitution, int memory, int imagination, int charm, int knowledge, int action, int face, int stress, int satisfaction, int potential, int IQRate, int EQRate, int constitutionRate, int memoryRate, int imaginationRate, int charmRate, int times) {
+    public essentialFactor(int IQ, int EQ, int constitution, int memory, int imagination, int charm, int knowledge, int action, int face, int stress, int satisfaction, int potential, int IQRate, int EQRate, int constitutionRate, int memoryRate, int imaginationRate, int charmRate, int times, int turn) {
         this.IQ = IQ;
         this.EQ = EQ;
         this.constitution = constitution;
@@ -27,6 +27,7 @@ public class essentialFactor {
         this.imaginationRate = imaginationRate;
         this.charmRate = charmRate;
         this.times = times;
+        this.turn = turn;
     }
 
     public int getIQ() {
@@ -212,6 +213,10 @@ public class essentialFactor {
             case "11" -> ef.addKnowledge(Integer.parseInt(toBA[2]));
             case "12" -> ef.addAction(Integer.parseInt(toBA[2]));
         }
+    }
+
+    public void nextTurn() {
+
     }
 
 }

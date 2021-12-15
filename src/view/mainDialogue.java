@@ -15,7 +15,7 @@ public class mainDialogue {
         String[][] Attr = {{"4","1","2","4","1","3"}, {"60","100","200","140","50","80"}};
 //        activity acc = new activity(stuActs, Attr);
         activity acc = new activity();
-        essentialFactor ef = new essentialFactor(100,300,64,100,100,67,300,45,50,78,89,78,34,78,23,56,23,78,4);
+        essentialFactor ef = new essentialFactor(100,300,64,100,100,67,300,45,50,78,89,78,34,78,23,56,23,78,4, 3);
         new mainDialogue(ef, acc);
     }
     public mainDialogue(essentialFactor ef, activity acc){

@@ -431,12 +431,9 @@ public class schedule extends JFrame{
             }
         });
 
-
         frame.add(panel);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-
 
 }
