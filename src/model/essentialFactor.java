@@ -97,11 +97,15 @@ public class essentialFactor {
     public int getCharmRate() {
         return charmRate;
     }
+
     public int getTimes() {
         return times;
     }
 
-    public void setIQ(int IQ) {this.IQ = IQ;}
+    public int getTurn() {
+        return turn;
+    }
+/*    public void setIQ(int IQ) {this.IQ = IQ;}
 
     public void setEQ(int EQ) {
         this.EQ = EQ;
@@ -173,16 +177,9 @@ public class essentialFactor {
 
     public void setT (int times) {
         this.times = times;
-    }
+    }*/
 
-    public int getTurn() {
-        return turn;
-    }
-
-    //request里面减少次数
     public void minusTimes(int minusTimes){this.times = times - minusTimes;}
-
-    //study里面修改属性
     public void minusKnowledge(int minusKnowledge){this.knowledge=knowledge - minusKnowledge;}
     public void addMemory(int addMemory){this.memory = memory + addMemory;}
     public void addIQ(int addIQ){this.IQ = IQ + addIQ;}

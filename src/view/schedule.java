@@ -263,6 +263,9 @@ public class schedule extends JFrame{
             if (ef.getAction() > 10) {
                 JOptionPane.showMessageDialog(null, "今天还有多余的行动力没有消耗噢~", "今天还有多余的行动力没有消耗噢~",JOptionPane.WARNING_MESSAGE);
             }
+            else if (index1 == -1) {
+                JOptionPane.showMessageDialog(null, "没有安排~", "没有安排~",JOptionPane.WARNING_MESSAGE);
+            }
             else {
                 essentialFactor.addAttr(acc.getActivity(index1), ef);
                 essentialFactor.addAttr(acc.getActivity(index2), ef);
