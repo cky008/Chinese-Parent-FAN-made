@@ -5,10 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.essentialFactor;
+import model.activity;
 
 public class goals extends JFrame {
 
-    public goals(essentialFactor ef){
+    public goals(essentialFactor ef, activity acc){
         JFrame frame = new JFrame("goals");    //创建Frame窗口
         frame.setBounds(600,130,380,550);
         frame.setLayout(new BorderLayout());
@@ -105,7 +106,7 @@ public class goals extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX(ef);
+                mainDialogueBOX m = new mainDialogueBOX(ef, acc);
 
             }
         });
@@ -113,7 +114,7 @@ public class goals extends JFrame {
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                request req = new request(ef);
+                request req = new request(ef, acc);
 
             }
         });
@@ -122,14 +123,14 @@ public class goals extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                study stu = new study(ef);
+                study stu = new study(ef, acc);
             }
         });
 
         schedule.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                schedule sch = new schedule(ef);
+                schedule sch = new schedule(ef, acc);
             }
         });
 

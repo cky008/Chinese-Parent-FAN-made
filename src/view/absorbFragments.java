@@ -2,7 +2,7 @@ package view;
 
 import model.essentialFactor;
 import model.fragments;
-
+import model.activity;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -14,7 +14,7 @@ public class absorbFragments {
     static JFrame frame = new JFrame("Absorb Fragments");
     static JLabel dataKnowledge, dataAction;
 
-    public absorbFragments(essentialFactor ef) {
+    public absorbFragments(essentialFactor ef, activity acc) {
         //创建Frame窗口
         frame.setBounds(450, 130, 750, 900);
         frame.setLayout(new BorderLayout());
@@ -45,7 +45,7 @@ public class absorbFragments {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX(ef);
+                mainDialogueBOX m = new mainDialogueBOX(ef, acc);
             }
         });
 

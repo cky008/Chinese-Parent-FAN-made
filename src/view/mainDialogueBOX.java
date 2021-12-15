@@ -7,12 +7,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Vector;
 import  model.essentialFactor;
+import model.activity;
 public class mainDialogueBOX {
     public static void main(String[] ars) {
+        activity acc = new activity();
         essentialFactor ef = new essentialFactor(100,300,64,100,100,67,300,45,50,78,89,78,34,78,23,56,23,78,4);
-        new mainDialogueBOX(ef);
+        new mainDialogueBOX(ef, acc);
     }
-    public mainDialogueBOX(essentialFactor ef){
+    public mainDialogueBOX(essentialFactor ef, activity acc){
+        //activity
         //invisible glue
         Component vGlue = Box.createVerticalGlue();
         Component hGlue = Box.createHorizontalGlue();
@@ -130,35 +133,35 @@ public class mainDialogueBOX {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.study stu = new study(ef);
+                view.study stu = new study(ef, acc);
             }
         });
 
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.request req = new request(ef);
+                view.request req = new request(ef, acc);
             }
         });
 
         absorbFragments.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.absorbFragments abF = new absorbFragments(ef);
+                view.absorbFragments abF = new absorbFragments(ef, acc);
             }
         });
 
         goals.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                goals goa = new goals(ef);
+                goals goa = new goals(ef, acc);
             }
         });
 
         schedule.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                schedule sch = new schedule(ef);
+                schedule sch = new schedule(ef, acc);
             }
         });
     }

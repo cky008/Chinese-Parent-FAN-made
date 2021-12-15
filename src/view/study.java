@@ -1,14 +1,15 @@
 package view;
 
 import model.essentialFactor;
-
+import model.activity;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+
 public class study extends JFrame {
-    public study(essentialFactor ef){
+    public study(essentialFactor ef, activity acc){
         JFrame frame = new JFrame("study");    //创建Frame窗口
         frame.setBounds(600,130,380,550);
         frame.setBackground(new Color(209,172,143));
@@ -262,6 +263,8 @@ public class study extends JFrame {
                     xuexi2.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][1]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][1]));
+                    //TODO: activity交互
+
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -383,7 +386,7 @@ public class study extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX(ef);
+                mainDialogueBOX m = new mainDialogueBOX(ef, acc);
 
             }
         });
@@ -391,7 +394,7 @@ public class study extends JFrame {
         request.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                view.request req = new request(ef);
+                view.request req = new request(ef, acc);
 
             }
         });
@@ -399,14 +402,14 @@ public class study extends JFrame {
         goals.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                goals goa = new goals(ef);
+                goals goa = new goals(ef, acc);
             }
         });
 
         schedule.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                schedule sch = new schedule(ef);
+                schedule sch = new schedule(ef, acc);
             }
         });
 
