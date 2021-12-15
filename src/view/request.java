@@ -29,6 +29,8 @@ public class request extends JFrame{
         panel2.setLayout(new GridLayout(5,1));
         String[][] reqActs = {{"小区滑梯","沙发蹦床","平板游戏","电子琴","橡皮泥","游乐园"},
                 {"26","27","28","38","30","40"}};
+        String[][] reqAttr = {{"5","5","1","3","2","3"},
+                {"60","100","200","140","50","80"}};
         int face = ef.getFace();
 
         //事件一
@@ -211,7 +213,7 @@ public class request extends JFrame{
                     clickReq.setEnabled(false);
                     ef.setIQ(1000);
                     //TODO: activity交互
-                    absorbFragments.renewNextLevel(ef);
+                    acc.addActivity(reqActs[1][0],reqAttr[0][0],reqAttr[1][0]);
                 }
                 if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -244,6 +246,7 @@ public class request extends JFrame{
                     clickReq2.setText("已索取");
                     clickReq2.setEnabled(false);
                     //TODO: activity交互
+                    acc.addActivity(reqActs[1][1],reqAttr[0][1],reqAttr[1][1]);
                 }
                 if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -276,6 +279,7 @@ public class request extends JFrame{
                     clickReq3.setText("已索取");
                     clickReq3.setEnabled(false);
                     //TODO: activity交互
+                    acc.addActivity(reqActs[1][2],reqAttr[0][2],reqAttr[1][2]);
                 }
                 if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -308,6 +312,7 @@ public class request extends JFrame{
                     clickReq4.setText("已索取");
                     clickReq4.setEnabled(false);
                     //TODO: activity交互
+                    acc.addActivity(reqActs[1][3],reqAttr[0][3],reqAttr[1][3]);
                 }
                 if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -340,6 +345,7 @@ public class request extends JFrame{
                     clickReq5.setText("已索取");
                     clickReq5.setEnabled(false);
                     //TODO: activity交互
+                    acc.addActivity(reqActs[1][4],reqAttr[0][4],reqAttr[1][4]);
                 }
                 if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))<0.75)){
                     JFrame j2 = new JFrame("提醒");

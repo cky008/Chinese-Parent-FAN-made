@@ -27,8 +27,12 @@ public class activity {
     public String[] getActivity(int i) {
         String[] tempArr = new String[3];
         tempArr[0] = this.ac.get(i);
+//        System.out.println(tempArr[0]);
         tempArr[1] = this.attr.get(i);
+//        System.out.println(tempArr[1]);
         tempArr[2] = this.attrV.get(i);
+//        System.out.println(tempArr[2]);
+//        System.out.println(tempArr);
         return tempArr;
     }
 
@@ -37,5 +41,6 @@ public class activity {
         this.attr.add(attr);
         this.attrV.add(attrV);
     }
+
 
 }
