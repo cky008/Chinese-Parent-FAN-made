@@ -216,7 +216,14 @@ public class essentialFactor {
     }
 
     public void nextTurn() {
-
+        this.IQ += this.IQRate;
+        this.EQ += this.EQRate;
+        this.imagination += this.imaginationRate;
+        this.memory += this.memoryRate;
+        this.constitution += this.constitutionRate;
+        this.action += 100;
+        this.turn += 1;
+        this.face += 3;
     }
 
 }

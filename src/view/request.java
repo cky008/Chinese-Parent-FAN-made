@@ -211,7 +211,6 @@ public class request extends JFrame{
                     text2.setText(String.valueOf(times[0]));
                     clickReq.setText("已索取");
                     clickReq.setEnabled(false);
-                    ef.setIQ(1000);
                     //TODO: activity交互
                     acc.addActivity(reqActs[0][0],reqAttr[0][0],reqAttr[1][0]);
                 }

@@ -109,6 +109,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addIQ((int) (10 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "2" -> {
@@ -118,6 +120,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addEQ((int) (10 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "3" -> {
@@ -127,15 +131,19 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addImagination((int) (10 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
-                            case "4 "-> {
+                            case "4"-> {
                                 if (ef.getAction()<10){
                                     JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
                                 }
                                 else {
                                     ef.minusAction(10);
                                     ef.addMemory((int) (10 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "5" -> {
@@ -145,6 +153,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addConstitution((int) (10 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "6" -> {
@@ -154,6 +164,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addIQE((int) (5 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "7" -> {
@@ -163,6 +175,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addEQE((int) (5 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "8" -> {
@@ -172,6 +186,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addImaginationE((int) (5 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "9" -> {
@@ -181,6 +197,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addMemoryE((int) (5 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "10" -> {
@@ -190,6 +208,8 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addConstitutionE((int) (5 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "11" -> {
@@ -199,17 +219,25 @@ public class fraPanel implements ActionListener{
                                 else {
                                     ef.minusAction(10);
                                     ef.addKnowledge((int) (20 * fraB.getBonus()));
+                                    absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                    absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 }
                             }
                             case "12" -> {
                                 ef.addAction((int) (15 * fraB.getBonus()));
+                                absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                             }
                             case "13" -> {
                                 ef.addAction((int) (20 * fraB.getBonus()));
+                                absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                             }
                             case "14" -> {
                                 ef.addAction(50);
                                 fraB.nextLevel();
+                                absorbFragments.dataKnowledge.setText(String.valueOf(ef.getKnowledge()));
+                                absorbFragments.dataAction.setText(String.valueOf(ef.getAction()));
                                 absorbFragments.renewNextLevel(ef);
                             }
                         }
