@@ -211,6 +211,7 @@ public class request extends JFrame{
                     clickReq.setEnabled(false);
                     ef.setIQ(1000);
                     //TODO: activity交互
+                    absorbFragments.renewNextLevel(ef);
                 }
                 if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
                     JFrame j2 = new JFrame("提醒");

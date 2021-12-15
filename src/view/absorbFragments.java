@@ -59,7 +59,8 @@ public class absorbFragments {
 
     public static void renewNextLevel(essentialFactor ef) {
         frame.remove(panel2);//移除面板中的所有组件
-        frame.add(fraPanel.genFraPanel(ef), BorderLayout.CENTER);//添加要切换的面板
+        panel2 = fraPanel.genFraPanel(ef);
+        frame.add(panel2, BorderLayout.CENTER);//添加要切换的面板
         frame.repaint();//刷新页面，重绘面板
         frame.validate();//使重绘的面板确认生效
     }
