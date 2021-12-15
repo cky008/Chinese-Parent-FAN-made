@@ -10,4 +10,6 @@ public class test2 {
         System.out.println("Heysddsd yo!");
         JOptionPane.showMessageDialog(null, "行动力不足！", "行动力不足！",JOptionPane.WARNING_MESSAGE);
     }
+
+
 }

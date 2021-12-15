@@ -227,7 +227,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][0])>=0){
-                    acc.addActivity(stuActs[1][0],stuAttr[0][0],stuAttr[1][0]);
+                    acc.addActivity(stuActs[0][0],stuAttr[0][0],stuAttr[1][0]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText1.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][0]+" +"+stuShuXing[1][0]);
@@ -256,7 +256,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][1])>=0){
-                    acc.addActivity(stuActs[1][1],stuAttr[0][1],stuAttr[1][1]);
+                    acc.addActivity(stuActs[0][1],stuAttr[0][1],stuAttr[1][1]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText2.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][1]+" +"+stuShuXing[1][1]);
@@ -286,7 +286,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][2])>=0){
-                    acc.addActivity(stuActs[1][2],stuAttr[0][2],stuAttr[1][2]);
+                    acc.addActivity(stuActs[0][2],stuAttr[0][2],stuAttr[1][2]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText3.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][2]+" +"+stuShuXing[1][2]);
@@ -315,7 +315,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][3])>=0){
-                    acc.addActivity(stuActs[1][3],stuAttr[0][3],stuAttr[1][3]);
+                    acc.addActivity(stuActs[0][3],stuAttr[0][3],stuAttr[1][3]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText4.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][3]+" +"+stuShuXing[1][3]);
@@ -344,7 +344,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][4])>=0){
-                    acc.addActivity(stuActs[1][4],stuAttr[0][4],stuAttr[1][4]);
+                    acc.addActivity(stuActs[0][4],stuAttr[0][4],stuAttr[1][4]);
 //                    System.out.println(acc.getActivity(0)[1]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText5.getText());
@@ -374,7 +374,7 @@ public class study extends JFrame {
                 j1.setBounds(660,320,245,100);
                 Panel panel = new Panel();
                 if(wuxing[0] - Integer.valueOf(stuActs[1][5])>=0){
-                    acc.addActivity(stuActs[1][5],stuAttr[0][5],stuAttr[1][5]);
+                    acc.addActivity(stuActs[0][5],stuAttr[0][5],stuAttr[1][5]);
                     panel.setLayout(new GridLayout(2,1));
                     JLabel stuAct = new JLabel(stuText6.getText());
                     JLabel shuxing = new JLabel(stuShuXing[0][5]+" +"+stuShuXing[1][5]);

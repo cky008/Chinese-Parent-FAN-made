@@ -16,9 +16,12 @@ public class schedule extends JFrame{
         Font f = new Font("宋体",Font.BOLD,30);//根据指定字体名称、样式和磅值大小，创建一个新 Font。
 
         //TODO: activity交互
-        String[]stuActs = {"英语","数学","语文","历史","物理","化学"};
-        String[][]shuxing = {{"记忆力","智商","情商","记忆力","智商","想象力"},
-                {"60","100","200","140","50","80"}};
+//        String[]stuActs = {"英语","数学","语文","历史","物理","化学"};
+//        String[][]shuxing = {{"记忆力","智商","情商","记忆力","智商","想象力"},
+//                {"60","100","200","140","50","80"}};
+        String[]stuActs = acc.getAcArr();
+        String[][]Attributes = {acc.getAttrArrC(),
+                acc.getAttrVArr()};
 
         //安排事件
         Panel panel = new Panel();
@@ -204,7 +207,9 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb1.getSelectedIndex();
-                detail1.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+//              detail1.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
+                detail1.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
+                System.out.println(Attributes[0][idx]);
             }
         });
 
@@ -212,7 +217,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb2.getSelectedIndex();
-                detail2.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+                detail2.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
             }
         });
 
@@ -220,7 +225,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb3.getSelectedIndex();
-                detail3.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+                detail3.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
             }
         });
 
@@ -228,7 +233,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb4.getSelectedIndex();
-                detail4.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+                detail4.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
             }
         });
 
@@ -236,7 +241,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb5.getSelectedIndex();
-                detail5.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+                detail5.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
             }
         });
 
@@ -244,7 +249,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 int idx = jcb6.getSelectedIndex();
-                detail6.setText(shuxing[0][idx]+"+"+shuxing[1][idx]);
+                detail6.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
             }
         });
 
@@ -294,132 +299,132 @@ public class schedule extends JFrame{
                 switch(index1)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
                 switch(index2)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
                 switch(index3)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
                 switch(index4)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
                 switch(index5)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
                 switch(index6)
                 {
                     case 0:
-                        ef.addMemory(Integer.valueOf(shuxing[1][0]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
                         break;
                     case 1:
-                        ef.addIQ(Integer.valueOf(shuxing[1][1]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
                         break;
                     case 2:
-                        ef.addEQ(Integer.valueOf(shuxing[1][2]));
+                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
                         break;
                     case 3:
-                        ef.addMemory(Integer.valueOf(shuxing[1][3]));
+                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
                         break;
                     case 4:
-                        ef.addIQ(Integer.valueOf(shuxing[1][4]));
+                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
                         break;
                     case 5:
-                        ef.addImagination(Integer.valueOf(shuxing[1][5]));
+                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
                 }
 
