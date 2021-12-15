@@ -9,15 +9,7 @@ import java.util.Vector;
 import  model.essentialFactor;
 import model.activity;
 public class mainDialogue {
-    public static void main(String[] ars) {
 
-        String[] stuActs = {"英语听说","算盘算术","古诗词","中国历史","初级物理","初级化学"};
-        String[][] Attr = {{"4","1","2","4","1","3"}, {"60","100","200","140","50","80"}};
-//        activity acc = new activity(stuActs, Attr);
-        activity acc = new activity();
-        essentialFactor ef = new essentialFactor(100,300,64,100,100,67,300,45,50,78,89,78,34,78,23,56,23,78,4, 3);
-        new mainDialogue(ef, acc);
-    }
     public mainDialogue(essentialFactor ef, activity acc){
         //activity
         //invisible glue
@@ -175,8 +167,12 @@ public class mainDialogue {
         returnBox.add(new JLabel(s1));
         Component hGlue = Box.createHorizontalGlue();
         returnBox.add(hGlue);
-        returnBox.add(new JLabel(String.valueOf(EFdata)));
-        returnBox.add(new JLabel("+" + EFturn + "/turn"));
+        JLabel tempJL1 = new JLabel(String.valueOf(EFdata));
+//        tempJL1.setForeground(Color.WHITE);
+        JLabel tempJL2 = new JLabel("+" + EFturn + "/turn");
+//        tempJL2.setForeground(Color.WHITE);
+        returnBox.add(tempJL1);
+        returnBox.add(tempJL2);
         return returnBox;
     }
 

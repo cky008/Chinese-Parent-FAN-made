@@ -20,8 +20,7 @@ public class schedule extends JFrame{
 //        String[][]shuxing = {{"记忆力","智商","情商","记忆力","智商","想象力"},
 //                {"60","100","200","140","50","80"}};
         String[]stuActs = acc.getAcArr();
-        String[][]Attributes = {acc.getAttrArrC(),
-                acc.getAttrVArr()};
+        String[][]Attributes = {acc.getAttrArrC(), acc.getAttrVArr()};
 
         //安排事件
         Panel panel = new Panel();
@@ -259,7 +258,6 @@ public class schedule extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
                 mainDialogue m = new mainDialogue(ef, acc);
-
             }
         });
 
@@ -267,7 +265,6 @@ public class schedule extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
                 view.request req = new request(ef, acc);
-
             }
         });
 
@@ -295,8 +292,28 @@ public class schedule extends JFrame{
                 int index4 = jcb4.getSelectedIndex();
                 int index5 = jcb5.getSelectedIndex();
                 int index6 = jcb6.getSelectedIndex();
+                if (ef.getAction() > 10) {
+                    JOptionPane.showMessageDialog(null, "今天还有多余的行动力没有消耗噢~", "今天还有多余的行动力没有消耗噢~",JOptionPane.WARNING_MESSAGE);
+                }
+                else {
+
+                    essentialFactor.addAttr(acc.getActivity(index1), ef);
+                    essentialFactor.addAttr(acc.getActivity(index2), ef);
+                    essentialFactor.addAttr(acc.getActivity(index3), ef);
+                    essentialFactor.addAttr(acc.getActivity(index4), ef);
+                    essentialFactor.addAttr(acc.getActivity(index5), ef);
+                    essentialFactor.addAttr(acc.getActivity(index6), ef);
+
+                    ef.nextTurn();
+
+                    frame.setVisible(false);
+                    mainDialogue m = new mainDialogue(ef, acc);
+
+                    JOptionPane.showMessageDialog(null, "今天是第" + ef.getTurn() + "周", "周数提醒",JOptionPane.WARNING_MESSAGE);
+                }
+
                 //增加属性
-                switch(index1)
+                /*switch(index1)
                 {
                     case 0:
                         ef.addMemory(Integer.valueOf(Attributes[1][0]));
@@ -426,7 +443,7 @@ public class schedule extends JFrame{
                     case 5:
                         ef.addImagination(Integer.valueOf(Attributes[1][5]));
                         break;
-                }
+                }*/
 
             }
         });

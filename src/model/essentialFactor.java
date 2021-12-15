@@ -179,6 +179,10 @@ public class essentialFactor {
         this.times = times;
     }
 
+    public int getTurn() {
+        return turn;
+    }
+
     //request里面减少次数
     public void minusTimes(int minusTimes){this.times = times - minusTimes;}
 
@@ -203,7 +207,7 @@ public class essentialFactor {
             case "1" -> ef.addIQ(Integer.parseInt(toBA[2]));
             case "2" -> ef.addEQ(Integer.parseInt(toBA[2]));
             case "3" -> ef.addImagination(Integer.parseInt(toBA[2]));
-            case "4 "-> ef.addMemory(Integer.parseInt(toBA[2]));
+            case "4"-> ef.addMemory(Integer.parseInt(toBA[2]));
             case "5" -> ef.addConstitution(Integer.parseInt(toBA[2]));
             case "6" -> ef.addIQE(Integer.parseInt(toBA[2]));
             case "7" -> ef.addEQE(Integer.parseInt(toBA[2]));
