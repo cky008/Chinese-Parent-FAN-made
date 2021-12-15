@@ -253,7 +253,7 @@ public class schedule extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX(ef, acc);
+                mainDialogue m = new mainDialogue(ef, acc);
 
             }
         });

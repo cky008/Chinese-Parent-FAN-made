@@ -7,7 +7,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
 
 public class absorbFragments {
     static Panel panel1, panel2, panel3;
@@ -45,7 +44,7 @@ public class absorbFragments {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.setVisible(false);
-                mainDialogueBOX m = new mainDialogueBOX(ef, acc);
+                mainDialogue m = new mainDialogue(ef, acc);
             }
         });
 
