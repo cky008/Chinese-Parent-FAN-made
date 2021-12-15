@@ -3,8 +3,6 @@ package view;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Vector;
 import  model.essentialFactor;
 import model.activity;
@@ -125,40 +123,29 @@ public class mainDialogue {
         frame.setVisible(true);
         frame.add(bg);
 
-        study.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.study stu = new study(ef, acc);
-            }
+        study.addActionListener(e -> {
+            frame.setVisible(false);
+            view.study stu = new study(ef, acc);
         });
 
-        request.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.request req = new request(ef, acc);
-            }
+        request.addActionListener(e -> {
+            frame.setVisible(false);
+            view.request req = new request(ef, acc);
         });
 
-        absorbFragments.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.absorbFragments abF = new absorbFragments(ef, acc);
-            }
+        absorbFragments.addActionListener(e -> {
+            frame.setVisible(false);
+            view.absorbFragments abF = new absorbFragments(ef, acc);
         });
 
-        goals.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                goals goa = new goals(ef, acc);
-            }
+        goals.addActionListener(e -> {
+            frame.setVisible(false);
+            goals goa = new goals(ef, acc);
         });
 
-        schedule.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                schedule sch = new schedule(ef, acc);
-            }
+        schedule.addActionListener(e -> {
+            frame.setVisible(false);
+            schedule sch = new schedule(ef, acc);
         });
     }
 

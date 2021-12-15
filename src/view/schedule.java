@@ -4,8 +4,6 @@ import model.essentialFactor;
 import model.activity;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class schedule extends JFrame{
     public schedule(essentialFactor ef, activity acc){
@@ -202,250 +200,216 @@ public class schedule extends JFrame{
         panel.add(p2,BorderLayout.SOUTH);
 
         //事件
-        jcb1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb1.getSelectedIndex();
+        jcb1.addActionListener(e -> {
+            int idx = jcb1.getSelectedIndex();
 //              detail1.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-                detail1.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-                System.out.println(Attributes[0][idx]);
-            }
+            detail1.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
+            System.out.println(Attributes[0][idx]);
         });
 
-        jcb2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb2.getSelectedIndex();
-                detail2.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-            }
+        jcb2.addActionListener(e -> {
+            int idx = jcb2.getSelectedIndex();
+            detail2.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
         });
 
-        jcb3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb3.getSelectedIndex();
-                detail3.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-            }
+        jcb3.addActionListener(e -> {
+            int idx = jcb3.getSelectedIndex();
+            detail3.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
         });
 
-        jcb4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb4.getSelectedIndex();
-                detail4.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-            }
+        jcb4.addActionListener(e -> {
+            int idx = jcb4.getSelectedIndex();
+            detail4.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
         });
 
-        jcb5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb5.getSelectedIndex();
-                detail5.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-            }
+        jcb5.addActionListener(e -> {
+            int idx = jcb5.getSelectedIndex();
+            detail5.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
         });
 
-        jcb6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int idx = jcb6.getSelectedIndex();
-                detail6.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
-            }
+        jcb6.addActionListener(e -> {
+            int idx = jcb6.getSelectedIndex();
+            detail6.setText(Attributes[0][idx]+"+"+Attributes[1][idx]);
         });
 
         //跳转
-        mainPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        mainPage.addActionListener(e -> {
+            frame.setVisible(false);
+            mainDialogue m = new mainDialogue(ef, acc);
+        });
+
+        request.addActionListener(e -> {
+            frame.setVisible(false);
+            view.request req = new request(ef, acc);
+        });
+
+        goals.addActionListener(e -> {
+            frame.setVisible(false);
+            goals goa = new goals(ef, acc);
+        });
+
+        study.addActionListener(e -> {
+            frame.setVisible(false);
+            view.study stu = new study(ef, acc);
+        });
+
+        anpai.addActionListener(e -> {
+            int index1 = jcb1.getSelectedIndex();
+            int index2 = jcb2.getSelectedIndex();
+            int index3 = jcb3.getSelectedIndex();
+            int index4 = jcb4.getSelectedIndex();
+            int index5 = jcb5.getSelectedIndex();
+            int index6 = jcb6.getSelectedIndex();
+            if (ef.getAction() > 10) {
+                JOptionPane.showMessageDialog(null, "今天还有多余的行动力没有消耗噢~", "今天还有多余的行动力没有消耗噢~",JOptionPane.WARNING_MESSAGE);
+            }
+            else {
+                essentialFactor.addAttr(acc.getActivity(index1), ef);
+                essentialFactor.addAttr(acc.getActivity(index2), ef);
+                essentialFactor.addAttr(acc.getActivity(index3), ef);
+                essentialFactor.addAttr(acc.getActivity(index4), ef);
+                essentialFactor.addAttr(acc.getActivity(index5), ef);
+                essentialFactor.addAttr(acc.getActivity(index6), ef);
+
+                ef.nextTurn();
                 frame.setVisible(false);
                 mainDialogue m = new mainDialogue(ef, acc);
+                JOptionPane.showMessageDialog(null, "这是第" + ef.getTurn() + "周", "周数提醒",JOptionPane.WARNING_MESSAGE);
             }
-        });
 
-        request.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.request req = new request(ef, acc);
+            //增加属性
+            /*switch(index1)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
             }
-        });
 
-        goals.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                goals goa = new goals(ef, acc);
+            switch(index2)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
             }
-        });
 
-        study.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.study stu = new study(ef, acc);
+            switch(index3)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
             }
-        });
 
-        anpai.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int index1 = jcb1.getSelectedIndex();
-                int index2 = jcb2.getSelectedIndex();
-                int index3 = jcb3.getSelectedIndex();
-                int index4 = jcb4.getSelectedIndex();
-                int index5 = jcb5.getSelectedIndex();
-                int index6 = jcb6.getSelectedIndex();
-                if (ef.getAction() > 10) {
-                    JOptionPane.showMessageDialog(null, "今天还有多余的行动力没有消耗噢~", "今天还有多余的行动力没有消耗噢~",JOptionPane.WARNING_MESSAGE);
-                }
-                else {
-
-                    essentialFactor.addAttr(acc.getActivity(index1), ef);
-                    essentialFactor.addAttr(acc.getActivity(index2), ef);
-                    essentialFactor.addAttr(acc.getActivity(index3), ef);
-                    essentialFactor.addAttr(acc.getActivity(index4), ef);
-                    essentialFactor.addAttr(acc.getActivity(index5), ef);
-                    essentialFactor.addAttr(acc.getActivity(index6), ef);
-
-                    ef.nextTurn();
-
-                    frame.setVisible(false);
-                    mainDialogue m = new mainDialogue(ef, acc);
-
-                    JOptionPane.showMessageDialog(null, "今天是第" + ef.getTurn() + "周", "周数提醒",JOptionPane.WARNING_MESSAGE);
-                }
-
-                //增加属性
-                /*switch(index1)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }
-
-                switch(index2)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }
-
-                switch(index3)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }
-
-                switch(index4)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }
-
-                switch(index5)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }
-
-                switch(index6)
-                {
-                    case 0:
-                        ef.addMemory(Integer.valueOf(Attributes[1][0]));
-                        break;
-                    case 1:
-                        ef.addIQ(Integer.valueOf(Attributes[1][1]));
-                        break;
-                    case 2:
-                        ef.addEQ(Integer.valueOf(Attributes[1][2]));
-                        break;
-                    case 3:
-                        ef.addMemory(Integer.valueOf(Attributes[1][3]));
-                        break;
-                    case 4:
-                        ef.addIQ(Integer.valueOf(Attributes[1][4]));
-                        break;
-                    case 5:
-                        ef.addImagination(Integer.valueOf(Attributes[1][5]));
-                        break;
-                }*/
-
+            switch(index4)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
             }
+
+            switch(index5)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
+            }
+
+            switch(index6)
+            {
+                case 0:
+                    ef.addMemory(Integer.valueOf(Attributes[1][0]));
+                    break;
+                case 1:
+                    ef.addIQ(Integer.valueOf(Attributes[1][1]));
+                    break;
+                case 2:
+                    ef.addEQ(Integer.valueOf(Attributes[1][2]));
+                    break;
+                case 3:
+                    ef.addMemory(Integer.valueOf(Attributes[1][3]));
+                    break;
+                case 4:
+                    ef.addIQ(Integer.valueOf(Attributes[1][4]));
+                    break;
+                case 5:
+                    ef.addImagination(Integer.valueOf(Attributes[1][5]));
+                    break;
+            }*/
+
         });
 
         frame.add(panel);

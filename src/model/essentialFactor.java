@@ -1,9 +1,5 @@
 package model;
 
-import view.absorbFragments;
-
-import javax.swing.*;
-
 public class essentialFactor {
     int IQ,EQ,constitution,memory,imagination,charm,knowledge,action,face,stress, satisfaction,potential,IQRate,EQRate,constitutionRate,memoryRate,imaginationRate,charmRate,times,turn;
 

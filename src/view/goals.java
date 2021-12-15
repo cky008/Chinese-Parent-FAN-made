@@ -2,8 +2,6 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import model.essentialFactor;
 import model.activity;
 
@@ -102,61 +100,42 @@ public class goals extends JFrame {
         panel.add(p2,BorderLayout.SOUTH);
 
         //跳转
-        mainPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                mainDialogue m = new mainDialogue(ef, acc);
+        mainPage.addActionListener(e -> {
+            frame.setVisible(false);
+            mainDialogue m = new mainDialogue(ef, acc);
 
+        });
+
+        request.addActionListener(e -> {
+            frame.setVisible(false);
+            request req = new request(ef, acc);
+
+        });
+
+        study.addActionListener(e -> {
+            frame.setVisible(false);
+            study stu = new study(ef, acc);
+        });
+
+        schedule.addActionListener(e -> {
+            frame.setVisible(false);
+            schedule sch = new schedule(ef, acc);
+        });
+
+        reqLim1.addActionListener(e -> {
+            if(ef.getImagination()>=500){
+                reqLim1.setText("已达到期望！");
             }
         });
 
-        request.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                request req = new request(ef, acc);
-
+        reqLim2.addActionListener(e -> {
+            if(ef.getEQ()>=300){
+                reqLim2.setText("已达到期望！");
             }
         });
-
-        study.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                study stu = new study(ef, acc);
-            }
-        });
-
-        schedule.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                schedule sch = new schedule(ef, acc);
-            }
-        });
-
-        reqLim1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(ef.getImagination()>=500){
-                    reqLim1.setText("已达到期望！");
-                }
-            }
-        });
-
-        reqLim2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(ef.getEQ()>=300){
-                    reqLim2.setText("已达到期望！");
-                }
-            }
-        });
-        reqLim3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if(ef.getIQ()>=100){
-                    reqLim3.setText("已达到期望！");
-                }
+        reqLim3.addActionListener(e -> {
+            if(ef.getIQ()>=100){
+                reqLim3.setText("已达到期望！");
             }
         });
         //frame

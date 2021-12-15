@@ -4,8 +4,6 @@ import model.essentialFactor;
 import model.activity;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class study extends JFrame {
@@ -220,211 +218,184 @@ public class study extends JFrame {
         panel.add(p2,BorderLayout.SOUTH);
 
         //按钮事件
-        xuexi1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][0])>=0){
-                    acc.addActivity(stuActs[0][0],stuAttr[0][0],stuAttr[1][0]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText1.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][0]+" +"+stuShuXing[1][0]);
-                    ef.addMemory(Integer.valueOf(stuShuXing[1][0]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi1.setText("已学习");
-                    xuexi1.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][0]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][0]));
-                    //TODO: activity交互
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+        xuexi1.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel1 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][0])>=0){
+                acc.addActivity(stuActs[0][0],stuAttr[0][0],stuAttr[1][0]);
+                panel1.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText1.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][0]+" +"+stuShuXing[1][0]);
+                ef.addMemory(Integer.parseInt(stuShuXing[1][0]));
+                panel1.add(stuAct);
+                panel1.add(shuxing);
+                j1.add(panel1);
+                xuexi1.setText("已学习");
+                xuexi1.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][0]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][0]));
+                //TODO: activity交互
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel1.add(noStu);
+                j1.add(panel1);
             }
+            j1.setVisible(true);
         });
 
-        xuexi2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][1])>=0){
-                    acc.addActivity(stuActs[0][1],stuAttr[0][1],stuAttr[1][1]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText2.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][1]+" +"+stuShuXing[1][1]);
-                    ef.addIQ(Integer.valueOf(stuShuXing[1][1]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi2.setText("已学习");
-                    xuexi2.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][1]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][1]));
-                    //TODO: activity交互
+        xuexi2.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel12 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][1])>=0){
+                acc.addActivity(stuActs[0][1],stuAttr[0][1],stuAttr[1][1]);
+                panel12.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText2.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][1]+" +"+stuShuXing[1][1]);
+                ef.addIQ(Integer.parseInt(stuShuXing[1][1]));
+                panel12.add(stuAct);
+                panel12.add(shuxing);
+                j1.add(panel12);
+                xuexi2.setText("已学习");
+                xuexi2.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][1]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][1]));
+                //TODO: activity交互
 
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel12.add(noStu);
+                j1.add(panel12);
             }
+            j1.setVisible(true);
         });
 
-        xuexi3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][2])>=0){
-                    acc.addActivity(stuActs[0][2],stuAttr[0][2],stuAttr[1][2]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText3.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][2]+" +"+stuShuXing[1][2]);
-                    ef.addEQ(Integer.valueOf(stuShuXing[1][2]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi3.setText("已学习");
-                    xuexi3.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][2]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][2]));
-                    //TODO: activity交互
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+        xuexi3.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel13 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][2])>=0){
+                acc.addActivity(stuActs[0][2],stuAttr[0][2],stuAttr[1][2]);
+                panel13.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText3.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][2]+" +"+stuShuXing[1][2]);
+                ef.addEQ(Integer.parseInt(stuShuXing[1][2]));
+                panel13.add(stuAct);
+                panel13.add(shuxing);
+                j1.add(panel13);
+                xuexi3.setText("已学习");
+                xuexi3.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][2]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][2]));
+                //TODO: activity交互
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel13.add(noStu);
+                j1.add(panel13);
             }
+            j1.setVisible(true);
         });
 
-        xuexi4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][3])>=0){
-                    acc.addActivity(stuActs[0][3],stuAttr[0][3],stuAttr[1][3]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText4.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][3]+" +"+stuShuXing[1][3]);
-                    ef.addMemory(Integer.valueOf(stuShuXing[1][3]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi4.setText("已学习");
-                    xuexi4.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][3]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][3]));
-                    //TODO: activity交互
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+        xuexi4.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel14 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][3])>=0){
+                acc.addActivity(stuActs[0][3],stuAttr[0][3],stuAttr[1][3]);
+                panel14.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText4.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][3]+" +"+stuShuXing[1][3]);
+                ef.addMemory(Integer.parseInt(stuShuXing[1][3]));
+                panel14.add(stuAct);
+                panel14.add(shuxing);
+                j1.add(panel14);
+                xuexi4.setText("已学习");
+                xuexi4.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][3]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][3]));
+                //TODO: activity交互
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel14.add(noStu);
+                j1.add(panel14);
             }
+            j1.setVisible(true);
         });
 
-        xuexi5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][4])>=0){
-                    acc.addActivity(stuActs[0][4],stuAttr[0][4],stuAttr[1][4]);
+        xuexi5.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel15 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][4])>=0){
+                acc.addActivity(stuActs[0][4],stuAttr[0][4],stuAttr[1][4]);
 //                    System.out.println(acc.getActivity(0)[1]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText5.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][4]+" +"+stuShuXing[1][4]);
-                    ef.addIQ(Integer.valueOf(stuShuXing[1][4]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi5.setText("已学习");
-                    xuexi5.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][4]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][4]));
-                    //TODO: activity交互
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+                panel15.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText5.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][4]+" +"+stuShuXing[1][4]);
+                ef.addIQ(Integer.parseInt(stuShuXing[1][4]));
+                panel15.add(stuAct);
+                panel15.add(shuxing);
+                j1.add(panel15);
+                xuexi5.setText("已学习");
+                xuexi5.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][4]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][4]));
+                //TODO: activity交互
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel15.add(noStu);
+                j1.add(panel15);
             }
+            j1.setVisible(true);
         });
 
-        xuexi6.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JFrame j1 = new JFrame("学会技能");
-                j1.setBounds(660,320,245,100);
-                Panel panel = new Panel();
-                if(wuxing[0] - Integer.valueOf(stuActs[1][5])>=0){
-                    acc.addActivity(stuActs[0][5],stuAttr[0][5],stuAttr[1][5]);
-                    panel.setLayout(new GridLayout(2,1));
-                    JLabel stuAct = new JLabel(stuText6.getText());
-                    JLabel shuxing = new JLabel(stuShuXing[0][5]+" +"+stuShuXing[1][5]);
-                    ef.addImagination(Integer.valueOf(stuShuXing[1][5]));
-                    panel.add(stuAct);
-                    panel.add(shuxing);
-                    j1.add(panel);
-                    xuexi6.setText("已学习");
-                    xuexi6.setEnabled(false);
-                    wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][5]);
-                    ef.minusKnowledge(Integer.valueOf(stuActs[1][5]));
-                    //TODO: activity交互
-                }else{
-                    JLabel noStu = new JLabel("悟性不足！");
-                    panel.add(noStu);
-                    j1.add(panel);
-                }
-                j1.setVisible(true);
+        xuexi6.addActionListener(e -> {
+            JFrame j1 = new JFrame("学会技能");
+            j1.setBounds(660,320,245,100);
+            Panel panel16 = new Panel();
+            if(wuxing[0] - Integer.parseInt(stuActs[1][5])>=0){
+                acc.addActivity(stuActs[0][5],stuAttr[0][5],stuAttr[1][5]);
+                panel16.setLayout(new GridLayout(2,1));
+                JLabel stuAct = new JLabel(stuText6.getText());
+                JLabel shuxing = new JLabel(stuShuXing[0][5]+" +"+stuShuXing[1][5]);
+                ef.addImagination(Integer.parseInt(stuShuXing[1][5]));
+                panel16.add(stuAct);
+                panel16.add(shuxing);
+                j1.add(panel16);
+                xuexi6.setText("已学习");
+                xuexi6.setEnabled(false);
+                wuxing[0] = wuxing[0] - Integer.parseInt(stuActs[1][5]);
+                ef.minusKnowledge(Integer.parseInt(stuActs[1][5]));
+                //TODO: activity交互
+            }else{
+                JLabel noStu = new JLabel("悟性不足！");
+                panel16.add(noStu);
+                j1.add(panel16);
             }
+            j1.setVisible(true);
         });
         //跳转
-        mainPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                mainDialogue m = new mainDialogue(ef, acc);
+        mainPage.addActionListener(e -> {
+            frame.setVisible(false);
+            mainDialogue m = new mainDialogue(ef, acc);
 
-            }
         });
 
-        request.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.request req = new request(ef, acc);
+        request.addActionListener(e -> {
+            frame.setVisible(false);
+            view.request req = new request(ef, acc);
 
-            }
         });
 
-        goals.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                goals goa = new goals(ef, acc);
-            }
+        goals.addActionListener(e -> {
+            frame.setVisible(false);
+            goals goa = new goals(ef, acc);
         });
 
-        schedule.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                schedule sch = new schedule(ef, acc);
-            }
+        schedule.addActionListener(e -> {
+            frame.setVisible(false);
+            schedule sch = new schedule(ef, acc);
         });
 
         frame.add(panel);

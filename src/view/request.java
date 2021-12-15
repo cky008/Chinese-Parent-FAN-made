@@ -2,8 +2,6 @@ package view;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import model.essentialFactor;
 import model.activity;
 public class request extends JFrame{
@@ -197,203 +195,178 @@ public class request extends JFrame{
         panel3.add(mainPage);
 
         //按钮事件
-        clickReq.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))>=0.75)&times[0]>0){
-                    JFrame j1 = new JFrame("提醒");
-                    j1.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("索取成功！");
-                    j1.add(reqSuc);
-                    j1.setVisible(true);
-                    times[0]--;
-                    ef.minusTimes(1);
-                    text2.setText(String.valueOf(times[0]));
-                    clickReq.setText("已索取");
-                    clickReq.setEnabled(false);
-                    //TODO: activity交互
-                    acc.addActivity(reqActs[0][0],reqAttr[0][0],reqAttr[1][0]);
+        clickReq.addActionListener(e -> {
+            if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))>=0.75)&times[0]>0){
+                JFrame j1 = new JFrame("提醒");
+                j1.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("索取成功！");
+                j1.add(reqSuc);
+                j1.setVisible(true);
+                times[0]--;
+                ef.minusTimes(1);
+                text2.setText(String.valueOf(times[0]));
+                clickReq.setText("已索取");
+                clickReq.setEnabled(false);
+                //TODO: activity交互
+                acc.addActivity(reqActs[0][0],reqAttr[0][0],reqAttr[1][0]);
+            }
+            if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
+                JFrame j2 = new JFrame("提醒");
+                j2.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("面子不足！");
+                JLabel reqSuc2 = new JLabel("次数不足！");
+                if(times[0]<=0){
+                    j2.add(reqSuc2);
                 }
-                if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
-                    JFrame j2 = new JFrame("提醒");
-                    j2.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("面子不足！");
-                    JLabel reqSuc2 = new JLabel("次数不足！");
-                    if(times[0]<=0){
-                        j2.add(reqSuc2);
-                    }
-                    else{
-                        j2.add(reqSuc);
-                    }
-                    j2.setVisible(true);
+                else{
+                    j2.add(reqSuc);
                 }
+                j2.setVisible(true);
             }
         });
 
-        clickReq2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))>=0.75)&times[0]>0){
-                    JFrame j1 = new JFrame("提醒");
-                    j1.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("索取成功！");
-                    j1.add(reqSuc);
-                    j1.setVisible(true);
-                    times[0]--;
-                    ef.minusTimes(1);
-                    text2.setText(String.valueOf(times[0]));
-                    clickReq2.setText("已索取");
-                    clickReq2.setEnabled(false);
-                    //TODO: activity交互
-                    acc.addActivity(reqActs[0][1],reqAttr[0][1],reqAttr[1][1]);
+        clickReq2.addActionListener(e -> {
+            if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))>=0.75)&times[0]>0){
+                JFrame j1 = new JFrame("提醒");
+                j1.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("索取成功！");
+                j1.add(reqSuc);
+                j1.setVisible(true);
+                times[0]--;
+                ef.minusTimes(1);
+                text2.setText(String.valueOf(times[0]));
+                clickReq2.setText("已索取");
+                clickReq2.setEnabled(false);
+                //TODO: activity交互
+                acc.addActivity(reqActs[0][1],reqAttr[0][1],reqAttr[1][1]);
+            }
+            if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))<0.75)){
+                JFrame j2 = new JFrame("提醒");
+                j2.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("面子不足！");
+                JLabel reqSuc2 = new JLabel("次数不足！");
+                if(times[0]<=0){
+                    j2.add(reqSuc2);
                 }
-                if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))<0.75)){
-                    JFrame j2 = new JFrame("提醒");
-                    j2.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("面子不足！");
-                    JLabel reqSuc2 = new JLabel("次数不足！");
-                    if(times[0]<=0){
-                        j2.add(reqSuc2);
-                    }
-                    else{
-                        j2.add(reqSuc);
-                    }
-                    j2.setVisible(true);
+                else{
+                    j2.add(reqSuc);
                 }
+                j2.setVisible(true);
             }
         });
 
-        clickReq3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))>=0.75)&times[0]>0){
-                    JFrame j1 = new JFrame("提醒");
-                    j1.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("索取成功！");
-                    j1.add(reqSuc);
-                    j1.setVisible(true);
-                    times[0]--;
-                    ef.minusTimes(1);
-                    text2.setText(String.valueOf(times[0]));
-                    clickReq3.setText("已索取");
-                    clickReq3.setEnabled(false);
-                    //TODO: activity交互
-                    acc.addActivity(reqActs[0][2],reqAttr[0][2],reqAttr[1][2]);
+        clickReq3.addActionListener(e -> {
+            if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))>=0.75)&times[0]>0){
+                JFrame j1 = new JFrame("提醒");
+                j1.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("索取成功！");
+                j1.add(reqSuc);
+                j1.setVisible(true);
+                times[0]--;
+                ef.minusTimes(1);
+                text2.setText(String.valueOf(times[0]));
+                clickReq3.setText("已索取");
+                clickReq3.setEnabled(false);
+                //TODO: activity交互
+                acc.addActivity(reqActs[0][2],reqAttr[0][2],reqAttr[1][2]);
+            }
+            if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))<0.75)){
+                JFrame j2 = new JFrame("提醒");
+                j2.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("面子不足！");
+                JLabel reqSuc2 = new JLabel("次数不足！");
+                if(times[0]<=0){
+                    j2.add(reqSuc2);
                 }
-                if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))<0.75)){
-                    JFrame j2 = new JFrame("提醒");
-                    j2.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("面子不足！");
-                    JLabel reqSuc2 = new JLabel("次数不足！");
-                    if(times[0]<=0){
-                        j2.add(reqSuc2);
-                    }
-                    else{
-                        j2.add(reqSuc);
-                    }
-                    j2.setVisible(true);
+                else{
+                    j2.add(reqSuc);
                 }
+                j2.setVisible(true);
             }
         });
 
-        clickReq4.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))>=0.75)&times[0]>0){
-                    JFrame j1 = new JFrame("提醒");
-                    j1.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("索取成功！");
-                    j1.add(reqSuc);
-                    j1.setVisible(true);
-                    times[0]--;
-                    ef.minusTimes(1);
-                    text2.setText(String.valueOf(times[0]));
-                    clickReq4.setText("已索取");
-                    clickReq4.setEnabled(false);
-                    //TODO: activity交互
-                    acc.addActivity(reqActs[0][3],reqAttr[0][3],reqAttr[1][3]);
+        clickReq4.addActionListener(e -> {
+            if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))>=0.75)&times[0]>0){
+                JFrame j1 = new JFrame("提醒");
+                j1.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("索取成功！");
+                j1.add(reqSuc);
+                j1.setVisible(true);
+                times[0]--;
+                ef.minusTimes(1);
+                text2.setText(String.valueOf(times[0]));
+                clickReq4.setText("已索取");
+                clickReq4.setEnabled(false);
+                //TODO: activity交互
+                acc.addActivity(reqActs[0][3],reqAttr[0][3],reqAttr[1][3]);
+            }
+            if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))<0.75)){
+                JFrame j2 = new JFrame("提醒");
+                j2.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("面子不足！");
+                JLabel reqSuc2 = new JLabel("次数不足！");
+                if(times[0]<=0){
+                    j2.add(reqSuc2);
                 }
-                if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))<0.75)){
-                    JFrame j2 = new JFrame("提醒");
-                    j2.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("面子不足！");
-                    JLabel reqSuc2 = new JLabel("次数不足！");
-                    if(times[0]<=0){
-                        j2.add(reqSuc2);
-                    }
-                    else{
-                        j2.add(reqSuc);
-                    }
-                    j2.setVisible(true);
+                else{
+                    j2.add(reqSuc);
                 }
+                j2.setVisible(true);
             }
         });
 
-        clickReq5.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))>=0.75)&times[0]>0){
-                    JFrame j1 = new JFrame("提醒");
-                    j1.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("索取成功！");
-                    j1.add(reqSuc);
-                    j1.setVisible(true);
-                    times[0]--;
-                    ef.minusTimes(1);
-                    text2.setText(String.valueOf(times[0]));
-                    clickReq5.setText("已索取");
-                    clickReq5.setEnabled(false);
-                    //TODO: activity交互
-                    acc.addActivity(reqActs[0][4],reqAttr[0][4],reqAttr[1][4]);
+        clickReq5.addActionListener(e -> {
+            if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))>=0.75)&times[0]>0){
+                JFrame j1 = new JFrame("提醒");
+                j1.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("索取成功！");
+                j1.add(reqSuc);
+                j1.setVisible(true);
+                times[0]--;
+                ef.minusTimes(1);
+                text2.setText(String.valueOf(times[0]));
+                clickReq5.setText("已索取");
+                clickReq5.setEnabled(false);
+                //TODO: activity交互
+                acc.addActivity(reqActs[0][4],reqAttr[0][4],reqAttr[1][4]);
+            }
+            if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))<0.75)){
+                JFrame j2 = new JFrame("提醒");
+                j2.setBounds(710,320,208,100);
+                JLabel reqSuc = new JLabel("面子不足！");
+                JLabel reqSuc2 = new JLabel("次数不足！");
+                if(times[0]<=0){
+                    j2.add(reqSuc2);
                 }
-                if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))<0.75)){
-                    JFrame j2 = new JFrame("提醒");
-                    j2.setBounds(710,320,208,100);
-                    JLabel reqSuc = new JLabel("面子不足！");
-                    JLabel reqSuc2 = new JLabel("次数不足！");
-                    if(times[0]<=0){
-                        j2.add(reqSuc2);
-                    }
-                    else{
-                        j2.add(reqSuc);
-                    }
-                    j2.setVisible(true);
+                else{
+                    j2.add(reqSuc);
                 }
+                j2.setVisible(true);
             }
         });
 
 
         //跳转
-        mainPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
+        mainPage.addActionListener(e -> {
 
-                frame.setVisible(false);
-                mainDialogue m = new mainDialogue(ef, acc);
+            frame.setVisible(false);
+            mainDialogue m = new mainDialogue(ef, acc);
 
-            }
         });
 
-        study.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                view.study stu = new study(ef, acc);
-            }
+        study.addActionListener(e -> {
+            frame.setVisible(false);
+            view.study stu = new study(ef, acc);
         });
 
-        goals.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                goals goa = new goals(ef, acc);
-            }
+        goals.addActionListener(e -> {
+            frame.setVisible(false);
+            goals goa = new goals(ef, acc);
         });
 
-        schedule.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                schedule sch = new schedule(ef, acc);
-            }
+        schedule.addActionListener(e -> {
+            frame.setVisible(false);
+            schedule sch = new schedule(ef, acc);
         });
 
         //frame布局

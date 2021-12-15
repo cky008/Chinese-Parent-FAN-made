@@ -5,8 +5,7 @@ import model.fragments;
 import model.activity;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
 
 public class absorbFragments {
     static Panel panel1, panel2, panel3;
@@ -40,12 +39,9 @@ public class absorbFragments {
         panel3.add(mainPage);
 
         //跳转
-        mainPage.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                frame.setVisible(false);
-                mainDialogue m = new mainDialogue(ef, acc);
-            }
+        mainPage.addActionListener(e -> {
+            frame.setVisible(false);
+            mainDialogue m = new mainDialogue(ef, acc);
         });
 
         //frame布局
