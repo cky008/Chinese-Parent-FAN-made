@@ -108,7 +108,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addIQ(10);
+                                    ef.addIQ((int) (10 * fraB.getBonus()));
                                 }
                             }
                             case "2" -> {
@@ -117,7 +117,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addEQ(10);
+                                    ef.addEQ((int) (10 * fraB.getBonus()));
                                 }
                             }
                             case "3" -> {
@@ -126,7 +126,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addImagination(10);
+                                    ef.addImagination((int) (10 * fraB.getBonus()));
                                 }
                             }
                             case "4 "-> {
@@ -135,7 +135,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addMemory(10);
+                                    ef.addMemory((int) (10 * fraB.getBonus()));
                                 }
                             }
                             case "5" -> {
@@ -144,7 +144,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addConstitution(10);
+                                    ef.addConstitution((int) (10 * fraB.getBonus()));
                                 }
                             }
                             case "6" -> {
@@ -153,7 +153,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addIQE(5);
+                                    ef.addIQE((int) (5 * fraB.getBonus()));
                                 }
                             }
                             case "7" -> {
@@ -162,7 +162,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addEQE(5);
+                                    ef.addEQE((int) (5 * fraB.getBonus()));
                                 }
                             }
                             case "8" -> {
@@ -171,7 +171,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addImaginationE(5);
+                                    ef.addImaginationE((int) (5 * fraB.getBonus()));
                                 }
                             }
                             case "9" -> {
@@ -180,7 +180,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addMemoryE(5);
+                                    ef.addMemoryE((int) (5 * fraB.getBonus()));
                                 }
                             }
                             case "10" -> {
@@ -189,7 +189,7 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addConstitutionE(5);
+                                    ef.addConstitutionE((int) (5 * fraB.getBonus()));
                                 }
                             }
                             case "11" -> {
@@ -198,17 +198,18 @@ public class fraPanel implements ActionListener{
                                 }
                                 else {
                                     ef.minusAction(10);
-                                    ef.addKnowledge(20);
+                                    ef.addKnowledge((int) (20 * fraB.getBonus()));
                                 }
                             }
                             case "12" -> {
-                                ef.addAction(15);
+                                ef.addAction((int) (15 * fraB.getBonus()));
                             }
                             case "13" -> {
-                                ef.addAction(20);
+                                ef.addAction((int) (20 * fraB.getBonus()));
                             }
                             case "14" -> {
                                 ef.addAction(50);
+                                fraB.nextLevel();
                                 absorbFragments.renewNextLevel(ef);
                             }
                         }

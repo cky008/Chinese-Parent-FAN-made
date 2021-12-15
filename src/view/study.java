@@ -236,6 +236,7 @@ public class study extends JFrame {
                     xuexi1.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][0]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][0]));
+                    //TODO: activity交互
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -292,6 +293,7 @@ public class study extends JFrame {
                     xuexi3.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][2]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][2]));
+                    //TODO: activity交互
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -319,6 +321,7 @@ public class study extends JFrame {
                     xuexi4.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][3]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][3]));
+                    //TODO: activity交互
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -346,6 +349,7 @@ public class study extends JFrame {
                     xuexi5.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][4]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][4]));
+                    //TODO: activity交互
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);
@@ -373,6 +377,7 @@ public class study extends JFrame {
                     xuexi6.setEnabled(false);
                     wuxing[0] = wuxing[0] - Integer.valueOf(stuActs[1][5]);
                     ef.minusKnowledge(Integer.valueOf(stuActs[1][5]));
+                    //TODO: activity交互
                 }else{
                     JLabel noStu = new JLabel("悟性不足！");
                     panel.add(noStu);

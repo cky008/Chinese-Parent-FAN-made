@@ -1,5 +1,9 @@
 package model;
 
+import view.absorbFragments;
+
+import javax.swing.*;
+
 public class essentialFactor {
     int IQ,EQ,constitution,memory,imagination,charm,knowledge,action,face,stress, satisfaction,potential,IQRate,EQRate,constitutionRate,memoryRate,imaginationRate,charmRate,times;
 
@@ -192,5 +196,22 @@ public class essentialFactor {
     public void addKnowledge(int addKnowledge){this.knowledge=knowledge + addKnowledge;}
     public void addAction(int addAction){this.action = action + addAction;}
     public void minusAction(int minusAction){this.action=action - minusAction;}
+
+    public static void addAttr(String[] toBA, essentialFactor ef) {
+        switch (toBA[1]) {
+            case "1" -> ef.addIQ(Integer.parseInt(toBA[2]));
+            case "2" -> ef.addEQ(Integer.parseInt(toBA[2]));
+            case "3" -> ef.addImagination(Integer.parseInt(toBA[2]));
+            case "4 "-> ef.addMemory(Integer.parseInt(toBA[2]));
+            case "5" -> ef.addConstitution(Integer.parseInt(toBA[2]));
+            case "6" -> ef.addIQE(Integer.parseInt(toBA[2]));
+            case "7" -> ef.addEQE(Integer.parseInt(toBA[2]));
+            case "8" -> ef.addImaginationE(Integer.parseInt(toBA[2]));
+            case "9" -> ef.addMemoryE(Integer.parseInt(toBA[2]));
+            case "10" -> ef.addConstitutionE(Integer.parseInt(toBA[2]));
+            case "11" -> ef.addKnowledge(Integer.parseInt(toBA[2]));
+            case "12" -> ef.addAction(Integer.parseInt(toBA[2]));
+        }
+    }
 
 }

@@ -210,6 +210,7 @@ public class request extends JFrame{
                     clickReq.setText("已索取");
                     clickReq.setEnabled(false);
                     ef.setIQ(1000);
+                    //TODO: activity交互
                 }
                 if((((face-Float.parseFloat(reqActs[1][0]))/Float.parseFloat(reqActs[1][0]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -241,6 +242,7 @@ public class request extends JFrame{
                     text2.setText(String.valueOf(times[0]));
                     clickReq2.setText("已索取");
                     clickReq2.setEnabled(false);
+                    //TODO: activity交互
                 }
                 if((((face-Float.parseFloat(reqActs[1][1]))/Float.parseFloat(reqActs[1][1]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -272,6 +274,7 @@ public class request extends JFrame{
                     text2.setText(String.valueOf(times[0]));
                     clickReq3.setText("已索取");
                     clickReq3.setEnabled(false);
+                    //TODO: activity交互
                 }
                 if((((face-Float.parseFloat(reqActs[1][2]))/Float.parseFloat(reqActs[1][2]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -303,6 +306,7 @@ public class request extends JFrame{
                     text2.setText(String.valueOf(times[0]));
                     clickReq4.setText("已索取");
                     clickReq4.setEnabled(false);
+                    //TODO: activity交互
                 }
                 if((((face-Float.parseFloat(reqActs[1][3]))/Float.parseFloat(reqActs[1][3]))<0.75)){
                     JFrame j2 = new JFrame("提醒");
@@ -334,6 +338,7 @@ public class request extends JFrame{
                     text2.setText(String.valueOf(times[0]));
                     clickReq5.setText("已索取");
                     clickReq5.setEnabled(false);
+                    //TODO: activity交互
                 }
                 if((((face-Float.parseFloat(reqActs[1][4]))/Float.parseFloat(reqActs[1][4]))<0.75)){
                     JFrame j2 = new JFrame("提醒");

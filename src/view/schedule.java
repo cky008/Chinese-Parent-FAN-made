@@ -15,6 +15,7 @@ public class schedule extends JFrame{
         frame.setLayout(new BorderLayout());
         Font f = new Font("宋体",Font.BOLD,30);//根据指定字体名称、样式和磅值大小，创建一个新 Font。
 
+        //TODO: activity交互
         String[]stuActs = {"英语","数学","语文","历史","物理","化学"};
         String[][]shuxing = {{"记忆力","智商","情商","记忆力","智商","想象力"},
                 {"60","100","200","140","50","80"}};
