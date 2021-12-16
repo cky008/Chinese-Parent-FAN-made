@@ -52,11 +52,10 @@ public class fragments {
     }
 
     private int[][] chRanFra(int[][] m){
-        int[][] returnM = m;
         for (int i = 0; i <= 19; i++) {
-            returnM[randomNumber(9)][randomNumber(9)] = randomNumber(14);
+            m[randomNumber(9)][randomNumber(9)] = randomNumber(14);
         }
-        return returnM;
+        return m;
     }
 
     public static int randomNumber(int n){

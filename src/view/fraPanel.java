@@ -14,7 +14,7 @@ public class fraPanel implements ActionListener{
         Panel panel = new Panel();
         panel.setLayout(new GridLayout(10,10,5,5));
 
-        fragments fraB = new fragments(10);
+        fragments fraB = new fragments(ef.getTurn());
         ImageIcon IQIcon = new ImageIcon("./src/resources/img/22.png");
         ImageIcon EQIcon = new ImageIcon("./src/resources/img/32.png");
         ImageIcon ImaginationIcon = new ImageIcon("./src/resources/img/422.png");
