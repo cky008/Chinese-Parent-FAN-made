@@ -33,14 +33,19 @@ public class mainDialogue {
         Box dataBox = Box.createHorizontalBox();
         JLabel dataKnowledge = new JLabel(String.valueOf(ef.getKnowledge()));
         JLabel dataAction = new JLabel(String.valueOf(ef.getAction()));
+        JLabel dataTurn = new JLabel(String.valueOf(ef.getTurn()));
         JButton knowledgeButton = new JButton("悟性");
+        JButton actionButton = new JButton("行动力");
+        JButton turnButton = new JButton("周数");
         dataAction.setForeground(Color.WHITE);
         dataKnowledge.setForeground(Color.WHITE);
-        JButton actionButton = new JButton("行动力");
+        dataTurn.setForeground(Color.WHITE);
         dataBox.add(knowledgeButton);
         dataBox.add(dataKnowledge);
         dataBox.add(actionButton);
         dataBox.add(dataAction);
+        dataBox.add(turnButton);
+        dataBox.add(dataTurn);
 
         //Essential Factor
         Box essentialFactor = Box.createVerticalBox();
